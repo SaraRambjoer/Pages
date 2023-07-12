@@ -1,15 +1,35 @@
 import './App.css'; 
-import { ChakraProvider, Heading, Box, Grid, GridItem, Card, CardHeader, CardBody, Flex, Text, Highlight, Avatar, Spacer} from '@chakra-ui/react'
-import { FadeIn } from './FadeIn';
+import { ChakraProvider, Heading, Box, Grid, GridItem, Card, CardHeader, CardBody, Flex, Text, Highlight, Avatar, Spacer, Center, Stack} from '@chakra-ui/react'
+import { FadeIn } from './Components/Animation/FadeIn';
 import theme from './theme';
-import { SmartToastButton } from './SmartToast';
+import { SmartToastButton } from './Components/UI/SmartToast';
+import { motion } from 'framer-motion';
+import { Carp } from './Components/Background/Carp';
+import { Vector3 } from './Components/Data classes/Vector3';
+import { Sandevistian } from './Components/Animation/Sandevistan';
+import { useRef } from 'react';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box>
-        <Grid templateColumns='repeat(12, 1fr)' templateRows='repeat(12, 1fr)' gap='6'>
-          <GridItem rowSpan={4} colSpan={4} colStart={8} rowStart={4}>
+      <Box position="absolute" z-aria-level={0} height="100vh" width="100vw">
+        <motion.svg viewBox={"0 0 100 100"}>
+          <Carp headPosition={new Vector3(50.0, 10.0, 0.0)} faceNormal={new Vector3(0.0, 1.0, 0.0)}></Carp>
+        </motion.svg>
+      </Box>
+      <Box z-aria-level={1}>
+        <Flex marginTop='10vh' paddingLeft='10vw'>
+          <Stack>
+            <Sandevistian baseX="200" baseY="100" id="sandevistan1" delay={2} from={[250, 250]} duration={2} steps={20} style={{position:'absolute', top:'100', left:'200'}}>
+              <Card>
+                <CardBody>
+                  <Text>Jeg har brukt hele dagen på dette og den stygge fisken.</Text>
+                </CardBody>
+              </Card>
+            </Sandevistian>
+          </Stack>
+          <Spacer></Spacer>
+          <Box marginRight={['0vw', '15vw']}>
             <Card bg="teal.800">
               <CardHeader>
                 <Heading>
@@ -53,8 +73,21 @@ function App() {
                 </Flex>
               </CardBody>
             </Card> 
-          </GridItem>
-        </Grid>
+            <Center>
+              <FadeIn duration={60} delay={3.0} initialScale={0.0}>
+                <Text color="gray.600">PS: Please click the fish.</Text>
+              </FadeIn>
+            </Center>
+            <br></br>
+            <Center>
+              <FadeIn duration={60} delay={53.0} initialScale={0.0}>
+                <Text color="gray.600">"
+                  It's from an earlier evolutionary era, before linear algebra had fully evolved."
+                </Text>
+              </FadeIn>
+            </Center>
+          </Box>
+        </Flex>
       </Box>
     </ChakraProvider>
   );
