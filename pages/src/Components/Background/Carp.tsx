@@ -36,6 +36,7 @@ export function Carp(props: any) {
     const relativeBaseNormal = new Vector3(0.0, 1.0, 0.0);
     const [goalLocation, setGoalLocation] = useState(new Vector3(Math.random()*100, Math.random()*100, 0.0));
     const [time, setTime] = useState(0.0);
+    const [visibility, setVisibility] = useState("hidden");
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -54,11 +55,28 @@ export function Carp(props: any) {
             }
             setTime(time + speed);
         }, 10);
+        const interval2 = setInterval(() => {
+            setVisibility("hidden");
+        }, 100);
+        
+        return () => {
+            clearInterval(interval);
+            clearInterval(interval2);
+        };
+    
+    }, [headPosition, faceNormal, setVisibility, goalLocation]);
 
-        return () => clearInterval(interval);
-    }, [headPosition, faceNormal]);
-
-    return <> 
+    const clickedLines = ["Ouch!", "Stop clicking me!", "Hey, I'm swimming here!"];
+    const [speechBulbComment, setSpeechBulbComment] = useState(clickedLines[0]);
+    var clickedCount = -1;
+    const gotClicked = () => {
+        clickedCount += 1;
+        setSpeechBulbComment(clickedLines[clickedCount % clickedLines.length])
+        setVisibility("visible");
+    };
+    const displayedClickBubbles = [<></>];
+    var showSpeechBubble = false;
+    return <a onClick={gotClicked}> 
         {/* body */}
         <motion.circle cx={wiggle(adjustVectorAfterNormal(headPosition, faceNormal, 4.5).x, 0.0, time)} cy={wiggle(adjustVectorAfterNormal(headPosition, faceNormal, 4.5).y, 0.9, time)} r="0.5" fill="orange"></motion.circle>
         <motion.circle cx={wiggle(adjustVectorAfterNormal(headPosition, faceNormal, 3.8).x, 0.1, time)} cy={wiggle(adjustVectorAfterNormal(headPosition, faceNormal, 3.8).y, 0.5, time)} r="0.7" fill="white"></motion.circle>
@@ -76,5 +94,10 @@ export function Carp(props: any) {
         <motion.polygon points={vector3ToStringPoints(generatePoints(headPosition, faceNormal, relativeBaseNormal, [new Vector3(-1.7, -2.5, 0.0), new Vector3(-0.9, -1.5, 0.0), new Vector3(-0.9, -2.0, 0.0)]))} fill="#ffffffaa"></motion.polygon>
         <motion.polygon points={vector3ToStringPoints(generatePoints(headPosition, faceNormal, relativeBaseNormal, [new Vector3(1.7, -2.5, 0.0), new Vector3(0.9, -1.5, 0.0), new Vector3(0.9, -2.0, 0.0)]))} fill="#ffffffaa"></motion.polygon>
         <motion.polygon points={vector3ToStringPoints(generatePoints(headPosition, faceNormal, relativeBaseNormal, [new Vector3(0.0, -4.78, 0.0), new Vector3(1.5, -6.0, 0.0), new Vector3(0.0, -5.5, 0.0), new Vector3(-1.5, -6.0, 0.0)]))} fill="#ffffffaa"></motion.polygon>
-    </>
+        <>
+            <rect x={headPosition.x+0.5} y={headPosition.y-15.5} width="25" height="15" fill="white" rx="0.2" ry="0.2" visibility={visibility}>
+            </rect>
+            <text x={headPosition.x+1} y={headPosition.y-13} fill="black" fontSize="2" fontFamily="Comic Sans MS" visibility={visibility}>{speechBulbComment}</text>
+        </>
+    </a>
 }

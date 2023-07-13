@@ -48,6 +48,7 @@ function generateSandevistanEntries(xSteps: any, xStepLength: any, ySteps: any, 
     }
     const sandevistanEntries = [];
     for (var i0 = 0; i0 < steps; i0++) {
+        // Todo fix DOM Tree
         sandevistanEntries.push(<SandevistanEntry backgroundColor={backgroundColors[i0]} position={positions[i0]} visibleTimes={visibleTimes[i0]} invisibleTimes={invisibleTimes[i0]} children={children} delay={delay}></SandevistanEntry>);
     }
     sandevistanEntries.push(<motion.div 

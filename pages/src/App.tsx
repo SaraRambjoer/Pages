@@ -1,5 +1,5 @@
 import './App.css'; 
-import { ChakraProvider, Heading, Box, Grid, GridItem, Card, CardHeader, CardBody, Flex, Text, Highlight, Avatar, Spacer, Center, Stack} from '@chakra-ui/react'
+import { ChakraProvider, Heading, Box, Grid, GridItem, Card, CardHeader, CardBody, Flex, Text, Highlight, Avatar, Spacer, Center, Stack, Image} from '@chakra-ui/react'
 import { FadeIn } from './Components/Animation/FadeIn';
 import theme from './theme';
 import { SmartToastButton } from './Components/UI/SmartToast';
@@ -20,10 +20,55 @@ function App() {
       <Box z-aria-level={1}>
         <Flex marginTop='10vh' paddingLeft='10vw'>
           <Stack>
-            <Sandevistian baseX="200" baseY="100" id="sandevistan1" delay={2} from={[250, 250]} duration={2} steps={20} style={{position:'absolute', top:'100', left:'200'}}>
+            <Sandevistian baseX="300" baseY="25" delay={6} from={[0, 250]} duration={2} steps={20} style={{position:'absolute', top:'25', left:'300'}}>
               <Card>
                 <CardBody>
-                  <Text>Jeg har brukt hele dagen på dette og den stygge fisken.</Text>
+                  <Text>I guess I should say some things about myself..</Text>
+                </CardBody>
+              </Card>
+            </Sandevistian>
+            <Sandevistian baseX="300" baseY="100" delay={8} from={[0, 300]} duration={2} steps={20} style={{position:'absolute', top:'100', left:'300'}}>
+              <Card>
+                <CardBody>
+                  <Text>I studied Comp-Sci + AI in university</Text>
+                </CardBody>
+              </Card>
+            </Sandevistian>
+            <Sandevistian baseX="300" baseY="175" delay={10} from={[0, 350]} duration={2} steps={20} style={{position:'absolute', top:'175', left:'300'}}>
+              <Card>
+                <CardBody>
+                  <Text>I'm working as a Software Development consultant</Text>
+                </CardBody>
+              </Card>
+            </Sandevistian>
+            <Sandevistian baseX="300" baseY="250" delay={12} from={[0, 400]} duration={2} steps={20} style={{position:'absolute', top:'250', left:'300'}}>
+              <Card>
+                <CardBody>
+                  <Text>I like doing silly side projects outside of work</Text>
+                </CardBody>
+              </Card>
+            </Sandevistian>
+            <Sandevistian baseX="300" baseY="325" delay={14} from={[0, 450]} duration={2} steps={20} style={{position:'absolute', top:'325', left:'300'}}>
+              <Card>
+                <CardBody>
+                  <Text>Like this effect which ruins the DOM tree because I never wrote the cleanup code</Text>
+                </CardBody>
+              </Card>
+            </Sandevistian>
+            <Sandevistian baseX="300" baseY="400" delay={16} from={[0, 500]} duration={2} steps={20} style={{position:'absolute', top:'400', left:'300'}}>
+              <Card>
+                <CardBody>
+                  <Text>Here's a photo of me</Text>
+                </CardBody>
+              </Card>
+            </Sandevistian>
+            <Sandevistian baseX="300" baseY="475" delay={19} from={[500, 550]} duration={2} steps={40} style={{position:'absolute', top:'475', left:'300'}}>
+              <Card>
+                <CardBody>
+                  <SmartToastButton title="There it is!" description={["Woooo!", "Knew we had one lying around somewhere.", "Now if only we could find the way out."]} status='success' duration={9000} isClosable={true}>
+                    <Image src="https://images.pexels.com/photos/2053815/pexels-photo-2053815.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="found it" scale="0.5">
+                    </Image>
+                  </SmartToastButton>
                 </CardBody>
               </Card>
             </Sandevistian>
@@ -81,8 +126,8 @@ function App() {
             <br></br>
             <Center>
               <FadeIn duration={60} delay={53.0} initialScale={0.0}>
-                <Text color="gray.600">"
-                  It's from an earlier evolutionary era, before linear algebra had fully evolved."
+                <Text color="gray.600">
+                  It's from an earlier evolutionary era, before linear algebra had fully evolved.
                 </Text>
               </FadeIn>
             </Center>
