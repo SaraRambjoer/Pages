@@ -32,7 +32,7 @@ export function CardStacker(props: any) {
                 {filterByModulus(props.children, 2, 0)}
             </Stack>
             <Spacer></Spacer>
-            <Stack margin='10px' width='33%'>
+            <Stack margin='10px' width='49%'>
                 {filterByModulus(props.children, 2, 1)}
             </Stack>
         </Flex>
