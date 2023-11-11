@@ -3,12 +3,10 @@ import { Flex, Card, Center } from '@chakra-ui/react';
 import { SlideFadeInOnScroll } from '../Animation/SlideFadeInOnScroll';
 
 export function FlexCard(props: any) {
-    return <Center style={{breakInside: 'avoid', marginBottom: "1rem"}}>
+    return <Center style={{breakInside: 'avoid', marginBottom: "1rem"}} width='auto'>
         <SlideFadeInOnScroll>
-            <Flex>
-                <Card>{props.children}
-                </Card>
-            </Flex>
+            <Card width='auto'>{props.children}
+            </Card>
         </SlideFadeInOnScroll>
     </Center>
 }
