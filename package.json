@@ -3,6 +3,7 @@
     "gh-pages": "^5.0.0"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.1.0"
+    "@chakra-ui/icons": "^2.1.0",
+    "react-parallax-tilt": "^1.7.173"
   }
 }
