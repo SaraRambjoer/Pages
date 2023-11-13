@@ -10,7 +10,6 @@ function filterByModulus(children: any, modulus: number, remainder: number) {
 
 export function CardStacker(props: any) {
     const { height, width } = useWindowDimensions();
-    console.log(width);
     if (width > 1280) {
         return <Flex>
             <Stack margin='10px' width='33%'>

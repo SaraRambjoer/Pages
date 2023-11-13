@@ -15,12 +15,18 @@ export function SimplerCardHeader(props: any) {
         });
     };
 
-    console.log(props.tags, tagElements);
-
     return <CardHeader style={{paddingBottom: '0px'}}>
-        <Heading style={{paddingBottom: '10px'}} size='md'>
-            {props.children}
-        </Heading>
+        <Flex>
+            <Heading style={{paddingBottom: '10px'}} size='md'>
+                {props.children}
+            </Heading>
+            <Spacer></Spacer>
+            <Text 
+                fontSize='sm'
+                color='gray.400'
+                as='i'
+            >{props.years}</Text>
+        </Flex>
         <Flex style={{flexWrap: 'wrap'}}>
             {tagElements}
         </Flex>    

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, CardHeader, Heading, Text, AccordionIcon, CardBody } from '@chakra-ui/react';
 import { FlexCard } from './FlexCard';
 import { SimplerCardHeader } from './SimplerCardHeader';
 
 export function Accardion(props: any) {
     return <FlexCard>
-        <SimplerCardHeader tags={props.tags}>
+        <SimplerCardHeader tags={props.tags} years={props.years}>
             {props.title}
         </SimplerCardHeader>
         <CardBody>

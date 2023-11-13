@@ -1,31 +1,42 @@
-import React from 'react';
-import { Flex, Card, Center } from '@chakra-ui/react';
+import { Flex, Card, Center, Spacer, Text } from '@chakra-ui/react';
 import { SlideFadeInOnScroll } from '../Animation/SlideFadeInOnScroll';
 import Tilt from 'react-parallax-tilt';
 
 export function FlexCard(props) {
-  return <>
-        <Tilt
-        tiltEnable={props.tiltEnable ? true : false}
-        glareEnable={true}
+  return (
+    <>
+      <Tilt
+        tiltEnable={true}
+        glareEnable={false}
         glareMaxOpacity={0.2}
         tiltReverse={true}
-        tiltMaxAngleX={10}
+        tiltMaxAngleX={5}
         tiltMaxAngleY={10}
         style={{
-            marginBottom: '1rem',
+          marginBottom: '1rem',
         }}
-        >
+      >
         <Center
-            style={{
+          style={{
             breakInside: 'avoid',
-            }}
-            width='auto'
+          }}
+          width='auto'
         >
-            <SlideFadeInOnScroll>
-            <Card width='auto'>{props.children}</Card>
-            </SlideFadeInOnScroll>
+          <SlideFadeInOnScroll>
+            <Card
+              width='auto'
+              style={{}}
+              _hover={{
+                boxShadow: '0px 0px 20px rgba(255, 255, 255, 0.5)',
+                transition: '0.3s',
+                animate: 'glow',
+              }}
+            >
+              {props.children}
+            </Card>
+          </SlideFadeInOnScroll>
         </Center>
-        </Tilt>
+      </Tilt>
     </>
+  );
 }
