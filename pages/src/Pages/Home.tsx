@@ -62,7 +62,7 @@ export function Home(props: any) {
                     <ListItem>Tender writing with focus on functional and technical design</ListItem>
                 </UnorderedList>
         </Accardion>
-        <FlexCard tiltEnable={true}>
+        <FlexCard>
             <SimplerCardHeader years='2023' tags={['React', 'ChakraUI', 'framer-motion']}>
                     This Website
             </SimplerCardHeader>
