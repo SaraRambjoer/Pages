@@ -25,6 +25,7 @@ export function SimplerCardHeader(props: any) {
                 fontSize='sm'
                 color='gray.400'
                 as='i'
+                paddingLeft='5px'
             >{props.years}</Text>
         </Flex>
         <Flex style={{flexWrap: 'wrap'}}>

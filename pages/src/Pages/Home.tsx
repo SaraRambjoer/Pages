@@ -1,15 +1,13 @@
-import React from 'react';
-import { Text, Stack, Card, CardHeader, CardBody, Box, Flex, Center, Spacer, Heading, Avatar, UnorderedList, ListItem, SimpleGrid, Wrap, Image, Link } from '@chakra-ui/react';
+import { Text, CardBody, Flex, Avatar, UnorderedList, ListItem } from '@chakra-ui/react';
 import pictureOfMe from '../media/itsapictureofme.jpg';
 import neuronInteresting from '../media/interesting_neuron.png';
 import { FlexCard } from '../Components/UI/FlexCard';
 import { Accardion } from '../Components/UI/Accardion';
-import { CaptionText } from '../Components/UI/CaptionText';
 import { CardImage } from '../Components/UI/CardImage';
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { SmartLink } from '../Components/UI/SmartLink';
 import { SimplerCardHeader } from '../Components/UI/SimplerCardHeader';
 import { CardStacker } from '../Components/UI/CardStacker';
+
 export function Home(props: any) {
     return <CardStacker style={{paddingLeft: 'calc(100vw - 100%)'}}>
         {/* Lets try to get filterable tags on these, would be cool */}
@@ -39,19 +37,6 @@ export function Home(props: any) {
             </UnorderedList>
             <Text>Otherwise classes covered typical software engineering, with topics like: Object oriented programming, functional programming, databases, operating systems, computer hardware and lower level languages, </Text>
         </Accardion>
-        <Accardion years='2021-2022' tags={['AI', 'Genetic Programming', 'Python']} title="Master's Thesis" shortText="Sara used CGP to evolve Artificial Neurons to solve the One-Pole Balancing problem as well as a simple classification task">
-            <Text>Sara wrote her master's thesis in Artificial Intelligence, where she investigated neuroevolution of artificial neurons.
-                She implemented Cartesian Genetic Programming and used it to evolve controllers for an artificial neuron robot by evolving implementations of pre-defined functions.
-                She tested this method against the One-Pole Balancing Problem, and found that it could evolve artificial neurons which performed well on the one-pole balancing problem, as well as the simple IRIS Flower Classification problem.
-            </Text>
-            <br></br>
-            <CardImage srcImage={neuronInteresting} alt="Potentially interesting neural network" caption="Sara created a visualization tool, which made it possible to explore the neural structure in 3D. The above is a network Sara identified as a possibly interesting structure - namely, one with a neural structure, but not so large that it wouldn't be able to send network signals in alloted simulation steps.">
-            </CardImage>
-            <br></br>
-            <SmartLink href="https://hdl.handle.net/11250/3028506" text="Sara's Master's Thesis is available online">
-
-            </SmartLink>
-        </Accardion>
         <Accardion years='2022-now' tags={['ASP.NET', 'Angular', 'PostgreSQL', 'Architecture & Solution Design', 'Tender Writing']} title="Work at Netcompany" shortText="I began working at Netcompany in June 2022 as a software development consultant">
             <UnorderedList>
                     <ListItem>Fullstack development of ASP.NET + PostgreSQL + Angular web application</ListItem>
@@ -62,6 +47,26 @@ export function Home(props: any) {
                     <ListItem>Tender writing with focus on functional and technical design</ListItem>
                 </UnorderedList>
         </Accardion>
+        <Accardion years='2021' tags={['AI', 'Python', 'Object Detection', 'Segmentation']} title="Summer internship: ML research at DNV-GL" shortText='Investigating how to evaluate machine vision in maritime environments.'>
+            <Text>I worked in the Group Research & Development at DNV-GL for three months during the summer of 2021. Me and another student worked on finding methods for evaulating object detection and segmentation models in the maritime environment. The goal was essentially to see which ideas we could come up with, and for us to investigate those ideas. Work included:</Text>
+            <UnorderedList>
+                <ListItem>Refactoring and continuing development on an internal evaluation tool based on PyQt.</ListItem>
+                <ListItem>Writing a scientific report detailing the domain and suggesting evaluation approaches along with experimental results, for example image clustering based on latent-space representations in a vision model.</ListItem>
+            </UnorderedList>
+        </Accardion>
+        <Accardion years='2021-2022' tags={['AI', 'Genetic Programming', 'Python']} title="Master's Thesis" shortText="I used CGP to evolve Artificial Neurons to solve the One-Pole Balancing problem as well as a simple classification task">
+            <Text>I wrote my master's thesis about Artificial Intelligence, where I investigated neuroevolution of artificial neurons.
+                I implemented Cartesian Genetic Programming and used it to evolve controllers for an artificial neuron robot by evolving implementations of pre-defined functions.
+                I tested this method against the One-Pole Balancing Problem, and found that it could evolve artificial neurons which performed well on the one-pole balancing problem, as well as the simple IRIS Flower Classification problem.
+            </Text>
+            <br></br>
+            <CardImage srcImage={neuronInteresting} alt="Potentially interesting neural network" caption="I created a visualization tool, which made it possible to explore the neural structure in 3D. The above is a network I identified as a possibly interesting structure - namely, one with a neural structure, but not so large that it wouldn't be able to send network signals in alloted simulation steps.">
+            </CardImage>
+            <br></br>
+            <SmartLink href="https://hdl.handle.net/11250/3028506" text="My Master's Thesis is available online">
+
+            </SmartLink>
+        </Accardion>
         <FlexCard>
             <SimplerCardHeader years='2023' tags={['React', 'ChakraUI', 'framer-motion']}>
                     This Website
@@ -71,6 +76,17 @@ export function Home(props: any) {
                 <SmartLink href="https://sararambjoer.github.io/Pages/" text="This website is available online"></SmartLink>
             </CardBody>
         </FlexCard>
+        <Accardion years='2020-2021' tags={['GOFAI', 'Research', 'Education', 'Video Production']} title='NTNU: Several part-time jobs' shortText='Helping produce course material during transition to Covid-19 and assisting with research'>
+            <Text>
+                During this period I worked three jobs focused on respectively: Producing course material for a GOFAI symbolic AI course in close collaboration with the professor for the crucial transition to Covid-19, helping lead the other teacher's aides during the course year, and then doing some research with the professor.
+            </Text>
+            <Text>In summary:</Text>
+            <UnorderedList>
+                <ListItem>Producing written exercises and video-lectures</ListItem>
+                <ListItem>Assisting students and leading teacher's aides</ListItem>
+                <ListItem>Reading research papers and drafting a scientific paper focused on Ethical-AI</ListItem>
+            </UnorderedList>
+        </Accardion>
         <Accardion years='2019' tags={['Flutter', 'Android']} title="Flutter dice rolling app" shortText="Supported storage and advanced rolls">
             <Text>I made a simple Flutter dice rolling app. It allowed to create dice rolls for tabletop RPGs. It had feature such as storing rolls in a database locally as well as advanced features like expanding dice and a "graphical dice roll syntax" with a simple parser allowing it do more advanced operations than simple rolls. Unfortunately I don't have much content related to this app anymore.</Text>
         </Accardion>
