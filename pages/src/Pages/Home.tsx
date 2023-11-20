@@ -1,4 +1,4 @@
-import { Text, CardBody, Flex, Avatar, UnorderedList, ListItem } from '@chakra-ui/react';
+import { Text, CardBody, Flex, Avatar, UnorderedList, ListItem, Center, Box } from '@chakra-ui/react';
 import pictureOfMe from '../media/itsapictureofme.jpg';
 import neuronInteresting from '../media/interesting_neuron.png';
 import { FlexCard } from '../Components/UI/FlexCard';
@@ -92,7 +92,9 @@ export function Home(props: any) {
         </Accardion>
         <Accardion years='2020' tags={['C#', 'Unity', 'Shader Programming']} title="3D-building prototype" shortText="A 3D building game made in Unity">
             <Text>I always thought that building larger things in games like Minecraft were a bit cumbersome, where you typically need to be close to what you are placing, which may require building temporary platforms and such, so I wanted to see if I could think of other ways of implementing something. The prototype uses raycasting for placing, as well as being able to place blocks separately from your own position, rescaling, and a shader to "look through" things which are in the way.</Text>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/3LY7UFViNgQ?si=4LT4DAXc3IPyDgyo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+            <Center>
+                <iframe width='100%' style={{aspectRatio: '16 / 9'}} src="https://www.youtube.com/embed/3LY7UFViNgQ?si=4LT4DAXc3IPyDgyo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+            </Center>
             <SmartLink href="https://sararam.itch.io/builditquick" text="The game is available online"></SmartLink>
         </Accardion>
         <Accardion years='2018' tags={['C#', 'Unity']} title="Sling: A 'Destroy the Castle'-like" shortText="A Unity game where you throw cannonballs at a structure to destroy the inhabitants.">
